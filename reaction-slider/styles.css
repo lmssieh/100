@@ -1,0 +1,137 @@
+:root {
+  --mood-x-position: 0%;
+  --mood-bg-image: 0;
+
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slider-options {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  position: relative;
+}
+
+.slider-options .option  {
+  width: 80px;
+  height: 80px;
+  background-color: lightgray;
+  filter: hue-rotate(40%);
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.slider-options .option > div {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-options .option:not(:first-child):after {
+  content:'';
+  position: absolute;
+  top: calc(30%-15px);
+  left: -2rem;
+  width: 3rem;
+  z-index: -1;
+  height: 15px;
+  clip-path: polygon(0% 39%, 0% 68%, 51% 60%, 100% 68%, 100% 38%, 51% 48%,);
+  background-color: inherit;
+}
+
+.slider-options.isOnHold::before {
+  content:  '';
+  background-image: var(--mood-bg-image);
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  display: flex;
+  position: absolute;
+  background-color: lightgray;
+  top: -110%;
+  left: var(--mood-x-position);
+  border-radius: 100%;
+  height: 80px;
+  width: 80px;
+}
+
+.slider-options .option .option__active {
+  background-color: blueviolet;
+
+  border-radius: 100%;
+}
+.slider-options .option .option__active img {
+  border-radius: 100%;
+  width: 80%;
+  height: 80%;
+  background-color: white;
+}
+
+.slider-options .option img {
+  /* transform: rotate(-7deg); */
+  width: 80%;
+  height: 80%;
+}
+
+
+/* Animation */
+.fromTop {
+  animation-duration: 0.5s;
+  animation-name: animate-from-top;
+  animation-timing-function: cubic-bezier(.29,.29,.27,.83);
+}
+
+/* .fromTop img {
+  animation-duration: 0.5s;
+  animation-name: animate-from-top;
+  animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
+} */
+
+@keyframes animate-from-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+
+  }
+}
+
+@keyframes animate-from-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+
+  }
+}
