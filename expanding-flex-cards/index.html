@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles.css" />
+		<link
+			rel="stylesheet"
+			href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+			rel="stylesheet"
+		/>
+
+		<title>Expanding Flex Cards</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="cards">
+				<div class="card card__ifrane">
+					<div class="card-content">
+						<div>
+							<div class="card-icon">
+								<i class="las la-snowflake" aria-hidden="true"></i>
+							</div>
+							<div class="card-name">
+								<div>Ifrane</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card card__azrou">
+					<div class="card-content">
+						<div>
+							<div class="card-icon">
+								<i class="las la-tree" aria-hidden="true"></i>
+							</div>
+							<div class="card-name">
+								<div>Azrou</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card card__chefchaouen card__active">
+					<div class="card-content">
+						<div>
+							<div class="card-icon">
+								<i class="las la-city" aria-hidden="true"></i>
+							</div>
+							<div class="card-name">
+								<div>Chefchaouen</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card card__desert">
+					<div class="card-content">
+						<div>
+							<div class="card-icon">
+								<i class="las la-sun" aria-hidden="true"></i>
+							</div>
+							<div class="card-name">
+								<div>Ait Benhaddou</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			const cardsWrapper = document.querySelector(".cards");
+			cardsWrapper.addEventListener("click", ({ target }) => {
+				if (target.parentElement.classList.contains("card__active")) {
+					console.log("sneed");
+					target.parentElement.classList.remove("card__active");
+				} else if (target.classList.contains("card-content")) {
+					document
+						.querySelector(".card__active")
+						?.classList.remove("card__active");
+					target.parentElement.classList.add("card__active");
+				}
+			});
+			// Array.from(cardEles).forEach((ele) => {
+			// 	ele.addEventListener
+			// });
+		</script>
+	</body>
+</html>

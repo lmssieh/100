@@ -1,0 +1,146 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+.cards {
+  display: flex;
+  max-width: 700px;
+}
+
+.card {
+  height: 500px;
+  color: white;
+  border-radius: 50px;
+  padding: 1rem 2rem;
+  margin:  .4rem;
+  cursor: pointer;
+  width: 50px;
+  transition: all .3s ease-in-out;
+  background: no-repeat url("https://source.unsplash.com/random");
+  position: relative;
+  overflow: hidden;
+  font-size: 130%;
+}
+
+.card__desert {
+  background: no-repeat url("https://www.desertbrise-travel.com/wp-content/uploads/2021/10/pexels-photo-10389880-1.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+.card__chefchaouen {
+  background: no-repeat url("https://get-wanderapp.com/wp-content/uploads/Untitled-designhfd-1.png");
+  background-size: cover;
+  background-position: center;
+}
+.card__azrou {
+  background: no-repeat url("https://img.freepik.com/premium-photo/azrou-cedar-forest-morocco_480416-505.jpg?w=1000");
+  background-size: cover;
+  background-position: center;
+}
+.card__ifrane {
+  background: no-repeat url("https://www.infostourismemaroc.com/uploads/images/gallery/5eb56d70e8057_ifrane-ville-moyen-atlas-marocain-montagne-infos-tourisme-maroc.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.card__active{
+  width: 600px;
+  transform: scale(101%);
+}
+
+.card::before {
+  content: '';
+  background-color: #000;
+  opacity: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  transition: all .3s;
+}
+
+.card-content > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 0 12px;
+  padding: .8rem;
+
+  /* transition: all 1s ease-in-out; */
+}
+
+.card__active > div {
+  margin: 0;
+  padding: .8rem 1.5rem;
+}
+
+.card-content .card-name {
+  display: none;
+}
+
+.card__active .card-name {
+/* .card-content:hover .card-name { */
+  display: block;
+}
+
+.card-icon {
+  border-radius: 9999px;
+  width: 40px;
+  height: 40px;
+  background-color: #000;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.card-icon .las {
+  font-size: 1.6rem;
+}
+
+
+@media (max-width: 430px) {
+  .card:nth-child(1),
+  .card:nth-child(2),
+  .card:nth-child(3)
+ {
+    display:none;
+ }
+ 
+}
+
+@media (max-width: 620px) {
+  .card:nth-child(1),
+  .card:nth-child(2) {
+    display:none;
+ }
+}
+
+@media (max-width: 768px) {
+  .card:nth-child(1) {
+    display:none;
+ }
+}
