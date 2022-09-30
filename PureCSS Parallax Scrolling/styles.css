@@ -1,0 +1,144 @@
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  max-width: 100vw;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+body::after {
+  content: '';
+  width: 100%;
+  background: white;
+  height: 1.4em;
+  position: fixed;
+  bottom: 0;
+  z-index: 23;
+}
+
+.wrapper .screens {
+  min-height: 100vh;
+
+
+}
+ .screen {
+  height: 100vh;
+  width: auto;
+
+}
+
+.screen-content {
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: auto;
+  height: 100%;
+  margin: 1.4em;
+  padding: 1.4em;
+  display: flex;
+  align-items: center;
+  gap: 2;
+  position: relative;
+  color: white;
+  z-index: 22;
+
+}
+
+
+.screen-content::after {
+  position: absolute;
+  content: '';
+  background: #000;
+  opacity: 70%;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.screen-content.one {
+  background-image: url(https://www.gent.media/assets/img/showcase/crazybaby@2x.webp);
+  
+}
+.screen-content.two {
+  background-image: url(https://www.gent.media/assets/img/showcase2/loop/md@2x.jpg);
+  background-position: right;
+  background-color: #000;
+  background-size: contain;
+}
+.screen-content.three {
+  background-image: url(https://www.gent.media/assets/img/showcase2/huawei/bg.svg);
+  background-color: #f1f3f5;
+  background-size: contain;
+
+}
+.screen-content .link {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  position: relative;
+}
+
+.screen-content .link::after {
+  content: '';
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  bottom: -20%;
+  left: 0;
+  background-color: white;
+  transition: all .3s ease-in-out;
+}
+
+.screen-content .link:hover::after {
+  bottom: -10%;
+
+}
+
+.screen-content .video {
+  margin: auto;
+
+}
+.screen-content video {
+  max-width: 500px;
+}
+.screen-content h2 {
+  margin-top: 10em;
+  margin-bottom: 1em;
+  font-weight: bold;
+}
+
+.screen-content p {
+  max-width: 450px;
+  line-height: 1.4;
+}
+
+footer {
+  font-family: monospace;
+  text-align: center;
+  font-size: 1rem;
+  margin: 2em 0;
+}
+
+@media (max-width: 630px) {
+  .screen-content {
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+}
+.screen-content h2 {
+  margin-top: 1em;
+}
+
+.screen-content video {
+  max-width: 400px;
+}
+}
